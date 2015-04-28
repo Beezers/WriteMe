@@ -14,7 +14,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
   
-onfig.serve_static_assets = false
+config.serve_static_assets = false
 config.assets.js_compressor = :uglifier
 config.assets.compile = true    
 config.assets.precompile += ['active_admin.js', 'active_admin.css', 'active_admin/print.css']
