@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 	def index
-		@content_one = "Some Random Text"
-		@content_two = "Some Random Text Two"
+		@posts = Post.all
 	end 
 	
 	def new
@@ -22,6 +21,8 @@ class PostsController < ApplicationController
 	
 	def show	
 	
+		@post = Post.find(params[:id])
+		
 	end
 	
 	def destroy
