@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module WriteMe
   class Application < Rails::Application
+  config.assets.precompile += %w( active_admin.css active_admin.js)
+  # config/application.rb
+config.assets.precompile += %w( active_admin.css active_admin.js active_admin/print.css )
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
