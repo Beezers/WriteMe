@@ -1,4 +1,4 @@
 class Category < ActiveRecord::Base
-	:name
-	has_many :posts
+:name
+has_many :posts
 end
