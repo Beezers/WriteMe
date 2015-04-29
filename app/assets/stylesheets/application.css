@@ -315,7 +315,6 @@ a:hover{
 #sidebar li li {
  line-height: 35px;
  border-bottom: 1px dashed #191919;
- background: url (images/img01.jpg) no-repeat left 15px;
  margin: 0px 20px 0px 20px;
  border-left: none;
  text-align: left;
@@ -337,7 +336,6 @@ a:hover{
  height: 31px;
  margin: 0px 0px 0px 0px;
  padding: 10px 0px 0px 20px;
- background: url(images/img03.jpg) no-repeat left top;
  text-shadow: #203060 -1px 1px 2px;
  text-align: left;
  text-transform: uppercase;
