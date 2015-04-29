@@ -9,11 +9,25 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
+ *= require flipclock
  *= require_self
  */
 
- 
+.clock {
+position: relative !important;
+padding-top: 0px;
+margin-left: 75px;
+height:00px;
+width: 800px;
+zoom: .6;
+transform: scale(.99);
+-ms-transform: scale(.54); /* IE 9 /
+-webkit-transform: scale(.54); / Safari and Chrome /
+-o-transform: scale(.54); / Opera /
+-moz-transform: scale(.54); / Firefox */
+}
+
+
  body {
  margin: 0;
  padding: 0;
@@ -78,6 +92,7 @@ a:hover{
 #logo {
  float: left;
  width: 250px;
+ height: 120px;
  margin: 0;
  padding: 0;
  color: #000000;
@@ -339,9 +354,9 @@ a:hover{
  text-shadow: #203060 -1px 1px 2px;
  text-align: left;
  text-transform: uppercase;
- letter-spacing: -0.5em;
  font-size: 2em;
  color: #FFFFFF;
+ letter-spacing: -2px;
 }
 
 #sidebar p {

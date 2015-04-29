@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WriteMe</title>
+   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Abel" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+</head>
+<body>
+ <div id="wrapper">
+	<div id="header">
+		<div id="header-wrapper">
+			<div id="logo">
+				<h1><a href="#">WriteME</a></h1>
+
+				<div class="clock"></div>
+
+	<script type="text/javascript">
+		var clock;
+		
+		$(document).ready(function() {
+
+			clock = $('.clock').FlipClock(10, {
+		        clockFace: 'MinuteCounter',
+		        countdown: true,
+		        callbacks: {
+		        	stop: function() {
+		        		$('.message').html('The clock has stopped!');
+		        	}
+		        }
+
+		    });
+						
+		});
+		clock.reset();
+		
+	</script>
+				
+				
+			</div>
+			<div id="menu">
+				<ul class ="main-nav">
+					<li><%= link_to "Home", root_path %></li>
+					<li><%= link_to "About", about_path %></li>
+					<li><%= link_to "Scenarios", posts_path %></li>
+					<li><%= link_to "Contact", contact_path %></li>
+					<li><%= link_to "Resources", resources_path %></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
