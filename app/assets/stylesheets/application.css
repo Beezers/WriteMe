@@ -145,19 +145,7 @@ a:hover{
 }
 
 
-#search form {
- height: 41px;
- margin: 0;
- padding: 10px 0 0 0px;
-}
-
-#search fieldset {
- margin: 0;
- padding: 0;
- border: none;
-}
-
-#search-text {
+.search_text{
  width: 170px;
  height: 19px;
  padding: 4px 5px 1px 5px;
@@ -168,7 +156,7 @@ a:hover{
  color: #5D781D;
 }
 
-#search-submit {
+.btw{
  width: 50px;
  height: 26px;
  background: #D93544;

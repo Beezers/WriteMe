@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 	def index
-		@posts = Post.all
+		@search = Post.search(params[:q])
+		@posts = @search.result(distinct: true)	
 	end 
 	
 	def new
