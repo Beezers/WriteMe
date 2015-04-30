@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 	def index
 		@search = Post.search(params[:q])
-		@posts = @search.result(distinct: true)	
+		@posts = @search.result.includes(:category, :admin_user)
+		@user = AdminUser.all
 	end 
 	
 	def new
@@ -33,7 +34,8 @@ class PostsController < ApplicationController
 	end
 	
 	def show	
-	
+		
+		@user = AdminUser.all
 		@post = Post.find(params[:id])
 		
 	end
@@ -47,7 +49,7 @@ class PostsController < ApplicationController
 	
 	private
 	def post_params    
-    params.require(:post).permit(:title, :body, :category_id)
+    params.require(:post).permit(:title, :body, :admin_user_id, :category_id)
 	end
 	
 end

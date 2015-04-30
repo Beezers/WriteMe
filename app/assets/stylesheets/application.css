@@ -27,6 +27,10 @@ transform: scale(.99);
 -moz-transform: scale(.54); / Firefox */
 }
 
+ category {
+float: left
+}
+
 
  body {
  margin: 0;

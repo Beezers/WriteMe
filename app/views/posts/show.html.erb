@@ -1,8 +1,8 @@
 <div class="post">
-<h1><%= @post.title %></h1>
+<h1 class="title"><%= @post.title %></h1>
 
-<p><%= @post.body %></p>
-<p>Category: <%= link_to @post.category.name, category_path(:id => @post.category.id) %></p>
+<div class="entry"><p><%= @post.body %></p></div>
 
-<small>Created: <%= @post.created_at.strftime("%d. %b %Y" ) %> | <%= link_to "Back", posts_path %></small>
+
+<small>Created on: <%= @post.created_at.strftime("%d. %b %Y" ) %> by: <%= @post.admin_user.name %> | <%= link_to "Home", posts_path %> | <%= link_to @post.category.name, category_path(:id => @post.category.id)%></small>
 </div>

@@ -2,9 +2,6 @@
 <div class="post">
 <h1 class="title"><%= link_to post.title, post %></h1>
 <div class="entry"><p><%= post.body %></p></div>
-<div class="byline">
-        <p class="meta">May 01, 2012 Posted by <a href="#">Gandalf the Grey</a></p>
-        <p class="links"><a href="post.html">Read More</a> BLAH BLAH BLAH</p>
-       </div>
+<small>Created on: <%= post.created_at.strftime("%d. %b %Y" ) %> by: <%= post.admin_user.name %> | <%= link_to "Home", posts_path %> | <%= link_to post.category.name, category_path(:id => post.category.id)%></small>
 </div>
 <% end %>

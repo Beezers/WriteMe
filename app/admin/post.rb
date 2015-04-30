@@ -3,7 +3,7 @@ ActiveAdmin.register Post do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-# permit_params :list, :of, :attributes, :on, :model
+  permit_params :name, :admin_user_id
 #
 # or
 #
@@ -13,5 +13,12 @@ ActiveAdmin.register Post do
 #   permitted
 # end
 
+	index  do
+	column :title
+    column 'Username', :admin_user 
+    column :category
+    column :created_at
+    actions
+	end
 
 end
