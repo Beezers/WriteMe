@@ -5,4 +5,24 @@
 
 
 <small>Created on: <%= @post.created_at.strftime("%d. %b %Y" ) %> by: <%= @post.admin_user.name %> | <%= link_to "Home", posts_path %> | <%= link_to @post.category.name, category_path(:id => @post.category.id)%></small>
+
+<%= form_for @comment do |f| %>
+<%= f.hidden_field :post_id %>
+
+<p>
+<br>
+<h1 class="title">How do you want the Story to Continue?</h1>
+<br>
+<br>
+<%= f.text_area :body %>
+</p>
+<p>
+
+<%= f.hidden_field :user_id %>
+<%= f.submit "Post" %>
+</p>
+<% end %>
+
+<%= render :partial => 'partials/comment', :collection => @post.comments.order(rating: :asc) %>
 </div>
+

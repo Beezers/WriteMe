@@ -37,6 +37,8 @@ class PostsController < ApplicationController
 		
 		@user = AdminUser.all
 		@post = Post.find(params[:id])
+		@comment = Comment.new(:post => @post)
+		
 		
 	end
 	

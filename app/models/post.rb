@@ -8,4 +8,6 @@ class Post < ActiveRecord::Base
 	
 	belongs_to :category
 	belongs_to :admin_user
+	#comments are connected to post, if post is deleted all comments are
+	has_many :comments, :dependent => :destroy
 end
