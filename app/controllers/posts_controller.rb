@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_action :authenticate_user!
+
 	def index
 		@search = Post.search(params[:q])
 		@posts = @search.result.includes(:category, :admin_user)

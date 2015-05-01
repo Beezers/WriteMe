@@ -1,4 +1,6 @@
 class CommentsController < InheritedResources::Base
+
+  before_action :authenticate_user!
  
   def create
   
