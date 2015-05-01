@@ -10,6 +10,7 @@ gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'rails_12factor', group: :production
 gem 'ransack'
+gem 'acts_as_votable'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

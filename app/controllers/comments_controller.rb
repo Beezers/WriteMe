@@ -16,6 +16,13 @@ class CommentsController < InheritedResources::Base
     redirect_to(@comment.post)
   end  
     end  	
+	
+	def upvote
+	@comment = Comment.find(params[:id])
+	@comment.upvote_by current_user
+	redirect_to comments_path
+	end
+	
 
     def comment_params
       params.require(:comment).permit(:user_id, :body, :post_id, :rating)

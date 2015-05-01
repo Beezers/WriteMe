@@ -3,8 +3,7 @@
 <head>
   <title>WriteMe</title>
    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Abel" type="text/css" />
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
-
+	
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -15,30 +14,48 @@
 	<div id="header">
 		<div id="header-wrapper">
 			<div id="logo">
-				<h1><a href="#">WriteME</a></h1>
+				<h1><a><%= link_to "WriteMe", root_path %></a></h1>
 
 				<div class="clock"></div>
+<script type="text/javascript">
+    var clock;
 
-	<script type="text/javascript">
-		var clock;
-		
-		$(document).ready(function() {
+    jQuery(document).ready(function() {
 
-			clock = $('.clock').FlipClock(10, {
-		        clockFace: 'MinuteCounter',
-		        countdown: true,
-		        callbacks: {
-		        	stop: function() {
-		        		$('.message').html('The clock has stopped!');
-		        	}
-		        }
+        var deadlineHour = 14, offset = 0;
 
-		    });
-						
-		});
-		clock.reset();
-		
-	</script>
+        // Grab the current date
+        var currentDate = new Date();
+
+        if(currentDate.getHours() >= deadlineHour) {
+            offset = 1;
+        }
+
+        var futureDate = new Date(
+            currentDate.getFullYear(), 
+            currentDate.getMonth(), 
+            currentDate.getDate() + offset, 
+            deadlineHour
+        );
+
+        // Calculate the difference in seconds between the future and current date
+        var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+        // Instantiate a coutdown FlipClock
+        clock = jQuery('.clock').FlipClock(diff, {
+            clockFace: 'HourlyCounter',
+            clockFaceOptions: {
+                countdown: true,
+            }
+        });
+
+        clock.face.on('stop', function() {
+            // add 24 hours worth of seconds to the clock face
+            clock.setFaceValue(24 * 60 * 60);
+            clock.start();
+        });
+    });
+</script>
 				
 				
 			</div>
