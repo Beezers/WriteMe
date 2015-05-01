@@ -13,7 +13,7 @@ class CommentsController < InheritedResources::Base
   ;flash[:notice] = "Error submitting: #{@comment.errors}"
     redirect_to(@comment.post)
   end  
-    end  
+    end  	
 
     def comment_params
       params.require(:comment).permit(:user_id, :body, :post_id, :rating)

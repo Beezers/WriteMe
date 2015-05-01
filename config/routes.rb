@@ -15,13 +15,13 @@ Rails.application.routes.draw do
   get '/resources', :to => 'pages#resources'
   get '/contact', :to => 'pages#contact'  
   get 'categories/index'
-
+	
+ 
   get 'categories/edit'
 
   get 'categories/new'
 
   get 'categories/show'
-
   get 'home/index'
 	resources :posts
 	resources :categories
@@ -79,4 +79,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+  
+  end

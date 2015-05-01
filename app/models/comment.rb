@@ -4,4 +4,6 @@ class Comment < ActiveRecord::Base
   
   validates_presence_of :body
   validates_length_of :body, :within=> 2..160
+  
+
 end

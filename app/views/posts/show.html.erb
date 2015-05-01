@@ -23,6 +23,6 @@
 </p>
 <% end %>
 
-<%= render :partial => 'partials/comment', :collection => @post.comments.order(rating: :asc) %>
+<%= render :partial => 'partials/comment', :collection => @post.comments.order(rating: :desc) %>
 </div>
 
